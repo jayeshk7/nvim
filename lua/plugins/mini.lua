@@ -1,4 +1,5 @@
 -- lua/plugins/mini.lua
+-- this is just for statusline nothing else
 
 return {
   {
