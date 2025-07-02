@@ -50,11 +50,10 @@ vim.keymap.set("n", "<space>st", function()
   end,
   { desc = "show terminal" }
 )
-
+vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "exit terminal mode" })
 
 -- do :help wincmd to refer window/tab navigation
 -- one useful one - if you have many split tabs in your window you can do CTRL-W T. this will make all the split tabs their full own tabs and you can rotate between them using gt.
-vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "exit terminal mode" })
 vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })

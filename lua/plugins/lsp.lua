@@ -17,13 +17,16 @@ return {
         }
       }
     },
+
     config = function()
-      require('lspconfig').clangd.setup({})
-      require('lspconfig').lua_ls.setup({})
-      -- Put this early in your init.lua (after Neovim v0.11+ loads)
-      vim.diagnostic.config({
-        virtual_text = true,
-      })
-    end
+      local lspconfig = require("lspconfig")
+      lspconfig.clangd.setup({})
+      lspconfig.lua_ls.setup({})
+      lspconfig.gopls.setup({})
+    end,
+    -- if you have multiple error/warning on one line then this will open all of those in a popup. you can press <space>d again to go inside the float window and copy the exact error/warning. getting out of float window is <space>qq for me
+    vim.keymap.set("n", "<space>d", vim.diagnostic.open_float),
+    -- Put this early in your init.lua (after Neovim v0.11+ loads)
+    vim.diagnostic.config({ virtual_text = true })
   }
 }
